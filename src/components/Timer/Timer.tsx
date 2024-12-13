@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Button from '../Button/Button';
+import TimerProgress from './TimerProgress';
 import { TimerMode } from '../../types';
 import { TIMER_DURATIONS, TIMER_LABELS } from '../../constants/timerConfig';
 import './Timer.css';
@@ -14,7 +15,7 @@ function Timer({ mode, onModeChange }: TimerProps) {
   const [timeLeft, setTimeLeft] = useState(TIMER_DURATIONS[mode]);
   const [isActive, setIsActive] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
-  const { playClick, playSuccess, playTimerComplete } = useSound();
+  const { playClick, playSuccess } = useSound();
 
   // Reset timer when mode changes
   useEffect(() => {
@@ -124,18 +125,24 @@ function Timer({ mode, onModeChange }: TimerProps) {
         </button>
       </div>
 
-      <div
-        className='time-display'
-        role='timer'
-        aria-label={`${formatTime(timeLeft)} remaining`}
-        aria-live='polite'
-      >
-        {formatTime(timeLeft)}
+      <div className='timer-display-container'>
+        <TimerProgress
+          timeLeft={timeLeft}
+          totalTime={TIMER_DURATIONS[mode]}
+          mode={mode}
+        />
+        <div
+          className='time-display'
+          role='timer'
+          aria-label={`${formatTime(timeLeft)} remaining`}
+          aria-live='polite'
+        >
+          {formatTime(timeLeft)}
+        </div>
+        <p className='timer-label' aria-live='polite'>
+          {TIMER_LABELS[mode]}
+        </p>
       </div>
-
-      <p className='timer-label' aria-live='polite'>
-        {TIMER_LABELS[mode]}
-      </p>
 
       <div className='timer-controls'>
         {isComplete ? (

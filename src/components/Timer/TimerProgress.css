@@ -1,0 +1,41 @@
+.timer-progress {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-progress-circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+}
+
+.timer-progress-background {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 2;
+}
+
+.timer-progress-indicator {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* Mode-specific colors */
+.timer-progress[data-mode='pomodoro'] .timer-progress-indicator {
+  stroke: var(--color-text);
+}
+
+.timer-progress[data-mode='shortBreak'] .timer-progress-indicator {
+  stroke: var(--color-text);
+}
+
+.timer-progress[data-mode='longBreak'] .timer-progress-indicator {
+  stroke: var(--color-text);
+}
