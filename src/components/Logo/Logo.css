@@ -1,0 +1,35 @@
+.logo {
+  margin: clamp(16px, 4vw, 24px) 0;
+  color: var(--color-text);
+}
+
+.logo-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.logo h1 {
+  font-size: clamp(20px, 4vw, 24px);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.tomato-icon {
+  width: clamp(20px, 4vw, 24px);
+  height: clamp(20px, 4vw, 24px);
+  filter: drop-shadow(var(--shadow-sm));
+}
+
+.logo-content:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.logo-content:hover .tomato-icon {
+  transform: rotate(-12deg) scale(1.1);
+}

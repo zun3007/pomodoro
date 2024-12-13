@@ -1,0 +1,59 @@
+.button {
+  /* Base button styles */
+  border: none;
+  background: none;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+/* Text button (PAUSE/START) */
+.button:not(.icon-button) {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.button:not(.icon-button):hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Icon buttons */
+.button.icon-button {
+  opacity: 0.8;
+  padding: var(--space-sm);
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.button.icon-button:hover {
+  opacity: 1;
+  background: var(--color-primary-light);
+  transform: scale(1.1);
+}
+
+/* Specific icon sizes */
+.button[aria-label='Stop timer'] {
+  font-size: 1.75rem;
+}
+
+.button[aria-label='Skip timer'] {
+  font-size: 2rem;
+}
+
+/* Focus states for accessibility */
+.button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Active state */
+.button:active {
+  transform: scale(0.95);
+}

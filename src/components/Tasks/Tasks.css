@@ -1,0 +1,131 @@
+.tasks {
+  width: 100%;
+  max-width: min(480px, 90vw);
+  margin: var(--space-lg) auto;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-lg) var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.tasks-header {
+  text-align: left;
+  margin-bottom: var(--space-md);
+}
+
+.tasks-header h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* Input styles */
+.task-input {
+  width: 80%;
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  font-size: 1.125rem;
+  font-weight: 300;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.task-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.task-input:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.form-actions button {
+  padding: var(--space-sm) var(--space-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 90px;
+}
+
+.form-actions button.cancel {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-text);
+}
+
+.form-actions button.save {
+  background: var(--color-text);
+  color: var(--color-primary);
+}
+
+/* Button states */
+button.task-input {
+  cursor: text;
+  text-align: left;
+  font-weight: 300;
+}
+
+button.task-input:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Task list styles */
+.task-list {
+  margin-top: var(--space-xl);
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-sm);
+  transition: all 0.2s ease;
+}
+
+.task-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Custom checkbox */
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-checkbox:checked {
+  background: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+}

@@ -1,0 +1,87 @@
+.timer {
+  position: relative;
+  width: 100%;
+  max-width: min(480px, 90vw);
+  margin: 0 auto;
+  padding: var(--space-xl);
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.timer-modes {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.timer-modes button {
+  padding: var(--space-md) var(--space-lg);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-light);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.timer-modes button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.timer-modes button.active {
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: 500;
+}
+
+.time-display {
+  font-size: clamp(4rem, 15vw, 6rem);
+  font-weight: 500;
+  text-align: center;
+  margin: var(--space-lg) 0;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.timer-label {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.timer-controls .button:not(.icon-button) {
+  min-width: clamp(160px, 30vw, 200px);
+}
+
+.timer button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.reset-button {
+  background: var(--color-primary-light);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-md);
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+  background: var(--color-primary-light);
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
